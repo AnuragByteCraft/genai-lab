@@ -1,0 +1,251 @@
+{
+    "/Users/ananth/research/packages/nanochat/tasks/spellingbee.py": {
+        "summary": "This file introduces tasks designed to improve NanoChat's ability to count letter occurrences within words (SpellingBee) and accurately spell those words (SimpleSpelling). It augments training data with varied user prompts and simulated reasoning steps, encouraging the model to combine manual counting methods with Python code verification. The tasks leverage a large list of English words and provide structured conversation formats, including tool calls for Python execution. It aims to enhance the model's understanding of character-level tokenization and improve its ability to perform basic word processing.\n\nKeywords: spelling, counting, letter frequency, tokenization, task augmentation, Python tool calls, word processing, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/tasks/mmlu.py": {
+        "summary": "This file defines a task for evaluating language models on the MMLU (Massive Multitask Language Understanding) dataset, a collection of multiple-choice questions spanning various academic subjects. It integrates into the larger system by providing a standardized way to load, process, and evaluate model responses against this benchmark. The file introduces a specific data format representing MMLU questions as conversations between a user (presenting the question and choices) and an assistant (providing the answer), facilitating evaluation within a conversational context.\n\nKeywords: MMLU, benchmark, multiple-choice, academic dataset, evaluation task, conversational format"
+    },
+    "/Users/ananth/research/packages/nanochat/tasks/gsm8k.py": {
+        "summary": "This file handles the evaluation of generative language models on the GSM8K dataset, a collection of grade-school math word problems. It integrates into the larger system by providing a standardized way to present these problems (including tool call parsing) and assess model-generated solutions against ground truth answers. The core contribution is transforming the GSM8K dataset's unique format (which includes calculator tool calls embedded within strings) into a structured conversation format suitable for evaluating generative models, and providing a straightforward correctness assessment. It introduces a specific data format representing conversations with tool call interactions (as lists of dictionaries containing \"type\" and \"text\").\n\nKeywords: GSM8K, math word problems, evaluation, dataset, tool calls, conversation format, generative models"
+    },
+    "/Users/ananth/research/packages/nanochat/tasks/smoltalk.py": {
+        "summary": "This file provides access to the \"smol-smoltalk\" conversational dataset, a resource designed for training smaller language models. It integrates into the larger system by offering a standardized way to load and access this dataset for training or evaluation purposes. The primary role is to encapsulate the complexities of loading, splitting, and validating the dataset's structure (alternating user/assistant turns). It introduces a \"messages\" data format representing conversations, ensuring each message has a defined role (user or assistant) and content.\n\nKeywords: conversational dataset, smoltalk, training data, language model, messages, role, user, assistant"
+    },
+    "/Users/ananth/research/packages/nanochat/tasks/common.py": {
+        "summary": "This file defines a foundational abstraction for representing and working with datasets of conversations, crucial for training large language models in NanoChat. It introduces the `Task` class as a base for organizing conversation data, along with subclasses like `TaskMixture` (for combining multiple datasets) and `TaskSequence` (for sequential training). The core purpose is to provide a unified way to slice, access, and evaluate these datasets, enabling flexible training regimes like curriculum learning or mixed-dataset fine-tuning. It establishes a common interface for accessing individual conversations and determining dataset size, supporting various evaluation types.\n\nKeywords: task abstraction, conversation datasets, training data, slicing, curriculum learning, mixed dataset training, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/tasks/arc.py": {
+        "summary": "This file handles the ARC (AI2 Reasoning Challenge) dataset, a benchmark for question-answering and reasoning abilities. It integrates into the larger system by providing a standardized way to access, format, and evaluate model responses against this dataset. Specifically, it transforms the ARC data into a conversation-like format suitable for training and evaluating conversational AI models. The primary contribution is the conversion of ARC's multiple-choice questions into a structured \"user/assistant\" dialogue, along with the necessary metadata for evaluation.\n\nKeywords: ARC, AI2 Reasoning Challenge, question answering, reasoning, dataset, conversation format, multiple choice"
+    },
+    "/Users/ananth/research/packages/nanochat/tasks/humaneval.py": {
+        "summary": "This file defines a task for evaluating language models on the HumanEval coding benchmark. It leverages the OpenAI HumanEval dataset, which consists of Python function prompts and their correct solutions. The task extracts relevant code from both the prompt (function signature) and the model's completion, then executes the combined program against provided test cases to determine if the generated code is functionally correct. It introduces a specific data format for representing problem instances, including prompts, canonical solutions, entry points, and test cases within a conversation-like structure.\n\nKeywords: HumanEval, coding benchmark, code execution, test cases, Python, evaluation, generative task"
+    },
+    "/Users/ananth/research/packages/nanochat/tasks/customjson.py": {
+        "summary": "This file provides a mechanism for loading conversational data from JSONL files into the NanoChat system. It addresses the need to ingest structured conversation histories, specifically those formatted as lists of message objects with \"role\" and \"content\" fields. The file parses these JSONL files, validates the conversation structure (alternating user/assistant roles and content types), and stores the conversations as a list of message sequences. This data is then accessible to other parts of the system for training or evaluation purposes, typically as a standardized format with a \"messages\" key.\n\nKeywords: JSONL, conversation data, message parsing, structured conversations, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/.DS_Store": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/LICENSE": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/uv.lock": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/speedrun.sh": {
+        "summary": "This script orchestrates the complete training pipeline for NanoChat, a large language model. It automates tasks like setting up virtual environments, downloading and preprocessing datasets (up to 240 shards), training a tokenizer, pre-training the base model, performing mid-training with synthetic conversations, and supervised fine-tuning. The script also includes optional reinforcement learning steps and generates a comprehensive report detailing the entire process, all designed to run on multi-GPU systems within a defined timeframe and cost.\n\nKeywords: language model training, distributed training, tokenizer, dataset download, fine-tuning, reinforcement learning, NanoChat, pipeline orchestration."
+    },
+    "/Users/ananth/research/packages/nanochat/pyproject.toml": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/tests/test_rustbpe.py": {
+        "summary": "This file primarily focuses on evaluating and comparing different BPE (Byte Pair Encoding) tokenizer implementations. It aims to ensure that various training methods \u2013 including a slow Python reference, an optimized Python version, Hugging Face's implementation, and a custom RustBPE tokenizer \u2013 produce identical results in terms of merges, vocabulary, and tokenization. The ultimate goal is to validate the RustBPE tokenizer's ability to be exported and used with tiktoken for efficient inference, ensuring consistent results across different systems. It introduces the GPT-4 split pattern for text segmentation and provides tools to train, encode, and decode using these different tokenizers.\n\nKeywords: BPE, tokenizer, Rust, Python, Hugging Face, training, encoding, decoding, tiktoken, performance evaluation, GPT-4 split pattern"
+    },
+    "/Users/ananth/research/packages/nanochat/tests/test_engine.py": {
+        "summary": "This file serves as a test suite for the key-value cache (KVCache) component within NanoChat's engine. It specifically focuses on verifying the correct resizing behavior of the cache when new tokens are added beyond its initial sequence length. The test reproduces a known bug related to incorrect cache resizing, ensuring that future updates address this issue and maintain the integrity of previously stored tokens during expansion. The test validates both that resizing occurs as expected, and that the original data remains consistent after the resize.\n\nKeywords: KVCache, cache resizing, testing, NanoChat, engine, key-value store, state management"
+    },
+    "/Users/ananth/research/packages/nanochat/run1000.sh": {
+        "summary": "This script orchestrates a large-scale training run for NanoChat, aiming to train a language model within a specific budget (approximately $1000 for 41.6 hours of compute). It handles environment setup, downloads necessary datasets (including a tokenizer training dataset and conversational data shards), trains the tokenizer, then launches multiple distributed training jobs (base training, loss calculation, evaluation) using `torchrun`. Finally, it performs supervised fine-tuning (SFT) and generates a final report. The script meticulously documents the hyperparameter selection process, demonstrating an effort to optimize for both training speed and model performance within resource constraints.\n\nKeywords: <training, distributed computing, language model, NanoChat, tokenizer, dataset, torchrun, scaling laws, resource optimization>"
+    },
+    "/Users/ananth/research/packages/nanochat/README.md": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/execution.py": {
+        "summary": "This file provides a sandboxed environment for executing Python code, typically generated by large language models. It aims to evaluate the correctness of LLM-generated code while preventing accidental or malicious actions on the host system. The sandbox achieves this by running code in separate processes with resource limits, disabling dangerous functions, and capturing standard output and error streams. It integrates into the larger system by providing a `execute_code` function that returns an `ExecutionResult` object containing information about the execution's success, output, and any errors encountered.\n\nKeywords: code execution, sandbox, security, resource limits, LLM evaluation, Python, multprocessing"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/__init__.py": {
+        "summary": "```python\n# nanochat/__init__.py\nfrom .conversation import Conversation, Message\nfrom .protocol import Protocol\n\n__all__ = [\"Conversation\", \"Message\", \"Protocol\"]\n```\n\nThis file serves as the primary entry point for the `nanochat` package, providing a way to access core components of the system. It essentially defines and exposes fundamental building blocks for managing conversations, including the `Conversation` object representing an ongoing dialogue and individual `Message` objects within that conversation. The package facilitates structuring interactions using a defined `Protocol`, enabling consistent communication patterns across different parts of the system. It allows developers to easily import and utilize these core concepts when building applications that leverage NanoChat's conversational capabilities.\n\nKeywords: nanochat, conversation, message, protocol, chat system, dialogue management"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/ui.html": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/dataset.py": {
+        "summary": "This file provides utilities for accessing and managing the pretraining dataset used by NanoChat. It handles downloading Parquet files containing text data from a remote Hugging Face repository if they are not already present locally, and then provides an efficient iterator for processing these files in batches. The primary goal is to streamline the process of loading and iterating over large datasets for training purposes, particularly in distributed training scenarios. It introduces a standardized data directory structure and a consistent format for Parquet filenames within that directory.\n\nKeywords: dataset, parquet, data loading, distributed training, text data, Hugging Face, pretraining"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/adamw.py": {
+        "summary": "This file implements a distributed variant of the AdamW optimizer, specifically designed for efficient training across multiple GPUs in a ZeRO-2 style. It addresses the challenge of scaling AdamW optimization to very large models by sharding optimizer states and gradients across devices, minimizing memory footprint on each GPU. The core functionality involves coordinating gradient updates across distributed workers using collective communication primitives, ensuring consistent optimization behavior in a parallel training environment. This optimizer is tightly integrated into the NanoChat system to facilitate large-scale model training.\n\nKeywords: distributed optimization, AdamW, ZeRO-2, parallel training, collective communication, gradient reduction"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/tokenizer.py": {
+        "summary": "This file defines the core text tokenizer used by NanoChat to convert raw user input into structured token sequences for language model processing. It handles conversation formatting, distinguishing between user and assistant messages using special tokens like `<|user_start|>` and `<|assistant_start|>`, as well as isolating code blocks. The file provides both a HuggingFace-based tokenizer and a RustBPE/tiktoken combination for training and efficient inference, allowing flexibility in model implementation. It introduces a standardized pattern for splitting text into tokens and a set of special tokens crucial for understanding conversation structure.\n\nKeywords: <tokenizer, BPE, GPT-3, nanochat, special tokens, conversation formatting, RustBPE, tiktoken>"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/engine.py": {
+        "summary": "The `engine.py` file provides the core inference engine for NanoChat, responsible for efficiently generating text sequences from token IDs. It manages a KV cache to track key-value pairs during generation, enabling context awareness across multiple layers of the language model. The engine also incorporates a safe calculator tool that can evaluate Python expressions within the generated text, enhancing NanoChat's capabilities. It orchestrates token sampling, state management (including Python block handling), and tool use to produce coherent and interactive conversational outputs.\n\nKeywords: inference, token generation, KV cache, calculator tool, state management, Python expression evaluation"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/common.py": {
+        "summary": "This file provides essential utility functions for the NanoChat system, primarily focused on managing logging, data storage, and distributed computing environments. It handles setup of colored console output for improved debugging, defines a base directory for caching downloaded data (co-locating with other cached data), and includes functions to safely download files using file locking for concurrent access. Additionally, it provides utilities for distributed data parallel (DDP) setup and device type detection to ensure proper execution across different hardware configurations.\n\nKeywords: logging, distributed computing, data caching, file locking, device detection, DDP, PyTorch, environment variables"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/dataloader.py": {
+        "summary": "This file provides a distributed data loader for NanoChat's language model training. It addresses the challenge of efficiently streaming and tokenizing large volumes of text data from Parquet files in a distributed training environment. The data loader fetches batches of documents, tokenizes them using a specified tokenizer (likely BPE), and assembles these tokens into training batches of a defined size. It integrates with NanoChat's distributed setup to ensure efficient data processing across multiple GPUs, preparing the tokenized sequences for model training.\n\nKeywords: distributed training, data loader, tokenizer, Parquet, streaming, tokenization, BPE, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/core_eval.py": {
+        "summary": "This file provides utilities for evaluating the CORE metric, a measure of model faithfulness in following instructions. It focuses on rendering prompts tailored for different task types (multiple choice, schema, language modeling) by incorporating few-shot examples and delimiters. The core functionality involves preparing prompts for evaluation, batching token sequences, and forwarding the model to determine correctness. It integrates into a larger system by providing prompt engineering tools for evaluating language models across various tasks, ultimately contributing to the assessment of model performance.\n\nKeywords: CORE metric, prompt rendering, task evaluation, language modeling, few-shot learning, instruction following."
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/muon.py": {
+        "summary": "This file introduces the Muon optimizer, a technique designed to improve training stability and performance, particularly for linear layers. It combines standard SGD-momentum with a post-processing step that orthogonalizes parameter updates using Newton\u2013Schulz iterations, aiming to prevent \"explosion\" of gradients. The system leverages this optimizer for 2D parameter updates (e.g., linear/conv kernels) and includes a distributed version that synchronizes gradients across multiple ranks via reduce-scatter and all-gather operations. It is intended as an alternative to AdamW for specific parameter types, avoiding its use on embeddings or scalar parameters.\n\nKeywords: optimizer, orthogonalization, Newton-Schulz, distributed training, gradient synchronization, momentum"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/loss_eval.py": {
+        "summary": "This file provides a mechanism for evaluating the performance of NanoChat's base language model using a \"bits per byte\" (bpb) metric. It addresses the need for a tokenization-agnostic evaluation method, ensuring fair comparisons when different vocabularies are used. The core functionality calculates the average loss normalized by the number of bytes represented by target tokens, excluding special and masked tokens. This metric is then aggregated across multiple training steps and distributed ranks to provide a comprehensive evaluation score, crucial for tracking model progress.\n\nKeywords: <loss function, bits per byte, bpb, evaluation metric, distributed training, language model, tokenization>"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/configurator.py": {
+        "summary": "This file provides a mechanism for dynamically overriding configuration variables at runtime. It addresses the problem of cumbersome, verbose configuration management by allowing users to specify overrides via command-line arguments or external Python files. The system executes these override scripts, directly modifying global variables within the running program's environment. This approach simplifies configuration changes without requiring code recompilation or complex module imports, providing a flexible way to adjust program behavior. It introduces the pattern of directly manipulating global variables as a means of configuration, executed from external scripts or command-line arguments.\n\nKeywords: configuration, overrides, runtime, dynamic, global variables, command line arguments, Python script"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/logo.svg": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/checkpoint_manager.py": {
+        "summary": "This file provides utilities for saving and loading model checkpoints within the NanoChat system, enabling persistence of trained models, optimizers, and associated metadata. It addresses the need to resume training or deploy previously saved model states by serializing these components and providing functions for their retrieval. The system utilizes a directory structure to organize checkpoints, with each checkpoint containing model weights (as `.pt` files), optimizer states (if applicable), and metadata stored in JSON format.\n\nKeywords: checkpoint, save, load, model state, optimizer, training, persistence, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/report.py": {
+        "summary": "This file provides utilities for generating training report cards within the NanoChat system. It collects and aggregates various pieces of information, including Git details, hardware specifications (CPU, GPU, memory), system environment variables, and training metrics from individual log files. The primary goal is to produce a comprehensive markdown report summarizing the training process, including environment details, performance metrics, and cost estimates. It integrates by orchestrating data collection from various sources (Git, system calls, log files) and presenting it in a structured format. It introduces the concept of \"report cards\" as a standardized way to document training runs, along with data formats for representing system information and performance metrics.\n\nKeywords: report generation, training summary, markdown reports, environment details, system information, performance metrics, cost estimation, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/nanochat/gpt.py": {
+        "summary": "This file defines the core GPT model architecture, focusing on efficient autoregressive text generation. It implements a transformer-based language model with rotary embeddings for positional encoding, aiming to achieve high performance and scalability. The model incorporates techniques like Multi-Query Attention (MQA) and a simplified MLP design to optimize inference speed while maintaining strong language modeling capabilities. It also provides tools for training and generation, including optimized optimizers and a straightforward streaming inference function.\n\nKeywords: GPT, transformer, language model, rotary embeddings, attention, autoregressive generation, MQA, inference, training"
+    },
+    "/Users/ananth/research/packages/nanochat/.gitignore": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/chat_eval.py": {
+        "summary": "This file orchestrates the evaluation of NanoChat's language model across various benchmark tasks like ARC, MMLU, GSM8K, HumanEval, and SpellingBee. It loads a pre-trained model, tokenizes prompts, generates completions (or analyzes categorical choices), and aggregates results across distributed processing ranks. The primary goal is to quantitatively assess the model's performance on these tasks, providing a standardized way to track progress and compare different models. It introduces the concept of \"ChatCORE,\" a metric that normalizes task accuracy against baseline performance to provide a relative measure of model capability.\n\nKeywords: evaluation, benchmark, language model, distributed computing, accuracy, ChatCORE"
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/tok_eval.py": {
+        "summary": "This file evaluates the compression performance of NanoChat's tokenizer against established models like GPT-2 and GPT-4. It processes various text samples (news, Korean, code, math, science) alongside training and validation data from NanoChat's dataset. The script measures token counts, byte sizes, and compression ratios to provide a comparative analysis of NanoChat's tokenizer, ultimately logging the findings in a report for performance tracking. It highlights relative differences and identifies whether NanoChat's tokenizer performs better or worse than the baselines.\n\nKeywords: <tokenizer, compression ratio, evaluation, NanoChat, GPT-2, GPT-4, BPE>"
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/chat_web.py": {
+        "summary": "This file serves as the central web server for NanoChat, providing both a user interface and an API endpoint for interacting with the language model. It utilizes data parallelism to distribute requests across multiple GPUs, each hosting a full copy of the model for faster processing. The server handles user input validation and streaming responses, offering health checks and worker pool statistics for monitoring system status. It introduces a `WorkerPool` to manage GPU resources and a streaming response format for real-time interactions.\n\nKeywords: web server, API, GPU parallelism, streaming, worker pool, FastAPI, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/base_train.py": {
+        "summary": "This file orchestrates the training process for NanoChat's language model, solving the problem of efficiently scaling LLM training across distributed hardware. It handles configuration parsing from command-line arguments and a configurator file, initializes the model and optimizer, manages distributed data loading, implements training loops with gradient accumulation and learning rate scheduling, and periodically evaluates the model on a validation dataset. The script introduces key data formats like distributed tokenized datasets and utilizes a configuration system to manage training hyperparameters, enabling flexible experimentation with different model architectures and optimization strategies.\n\nKeywords: LLM training, distributed training, NanoChat, configuration management, gradient accumulation, learning rate scheduling, validation, checkpointing."
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/mid_train.py": {
+        "summary": "This script performs mid-training of a language model, building upon a pre-trained base model. It leverages a mixture of datasets including conversations, multiple choice questions, math problems, and spelling tasks to refine the model's capabilities. The training process involves a distributed setup using PyTorch Distributed Data Parallel (DDP) to scale across multiple GPUs, employing techniques like gradient accumulation and learning rate scheduling. The script saves checkpoints periodically to enable resuming training or evaluating the model's progress, and integrates with Weights & Biases for logging metrics.\n\nKeywords: mid-training, language model, distributed training, PyTorch Distributed Data Parallel (DDP), gradient accumulation, learning rate scheduling, checkpointing, Weights & Biases, task mixture."
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/chat_rl.py": {
+        "summary": "This file orchestrates reinforcement learning (RL) training on the GSM8K dataset using a simplified version of the GRPO algorithm. It focuses on fine-tuning a language model to generate solutions to mathematical problems by directly optimizing for reward signals. The script handles data loading, rollout generation, loss calculation (based on advantage estimation), and model updates within a distributed training environment. It integrates with the NanoChat system for checkpointing, logging via WandB, and leveraging pre-trained models.\n\nKeywords: reinforcement learning, GSM8K, language model fine-tuning, distributed training, advantage estimation, NanoChat, GRPO"
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/chat_cli.py": {
+        "summary": "This file provides a command-line interface (CLI) for interacting with the NanoChat language model. It allows users to engage in conversational turns, providing prompts and receiving generated responses from the model. The CLI handles conversation history management (clearing or continuing), special commands like \"quit\" and \"clear,\" and manages the interaction flow between user input and model output. It leverages a separate `Engine` component for efficient text generation, streamlining the process of turning conversation tokens into assistant responses.\n\nKeywords: CLI, command-line interface, chatbot, conversational AI, language model interaction, NanoChat, text generation, prompt engineering."
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/base_eval.py": {
+        "summary": "This file defines a core evaluation pipeline for assessing language models on the CORE benchmark, a collection of diverse tasks designed to measure instruction-following capabilities. It automates downloading and preparing the necessary evaluation data (a zip file containing task configurations and datasets), then runs a model on each task, calculating accuracy and a centered metric. The final result is the CORE metric\u2014an average of these centered scores\u2014and is logged for reporting.\n\nKeywords: core evaluation, benchmark, language model assessment, instruction following, CORE metric, task evaluation, distributed training"
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/tok_train.py": {
+        "summary": "This script is responsible for training the tokenizer used by NanoChat. It processes a large corpus of text data (from parquet files) to learn the optimal tokenization scheme, effectively creating a vocabulary and mapping text segments to numerical tokens. The trained tokenizer is then saved for use in subsequent model training and inference, ensuring consistent text processing throughout the system. A key aspect is calculating and saving token byte lengths for evaluating model efficiency, providing a metric invariant to vocabulary size.\n\nKeywords: tokenizer, BPE, training, Rust, vocabulary, tokens, NanoChat, parquet, text processing"
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/chat_sft.py": {
+        "summary": "This script orchestrates the fine-tuning of a base language model into a chat model using supervised fine-tuning (SFT). It loads a pre-trained model and tokenizer, then trains it on a mixture of conversation datasets (ARC, GSM8K, SmolTalk, custom JSON, spelling tasks) using a defined set of hyperparameters. The training process includes validation steps to monitor performance and incorporates techniques like gradient accumulation for efficient training across multiple GPUs. Finally, it saves the fine-tuned model checkpoint with relevant metadata for later use or evaluation.\n\nKeywords: supervised fine-tuning, chat model, language model training, task mixture, gradient accumulation, checkpoint saving, NanoChat"
+    },
+    "/Users/ananth/research/packages/nanochat/scripts/base_loss.py": {
+        "summary": "This script serves as a comprehensive evaluation and sampling tool for the base language model within NanoChat. It assesses model performance by calculating bits-per-byte (BPB) loss on both training and validation datasets, providing a quantitative measure of model quality. Additionally, it generates sample text completions from the model using a predefined set of prompts, allowing for qualitative assessment. The results, including loss metrics and generated samples, are logged to a reporting system for tracking model progress.\n\nKeywords: <loss evaluation, bits-per-byte, language model, sampling, NanoChat, base model, reporting>"
+    },
+    "/Users/ananth/research/packages/nanochat/.python-version": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/dev/generate_logo.html": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/dev/nanochat.png": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/dev/repackage_data_reference.py": {
+        "summary": "This file serves as documentation outlining the process of preparing the FinewebEdu-100B dataset for use in NanoChat. It details how the original dataset is repackaged into smaller, shuffled Parquet files designed for efficient streaming and caching during training. The resulting shards are approximately 100MB in size after compression, facilitating faster data loading and reducing training latency. The process introduces a shard-based organization of the dataset, leveraging Parquet files with Zstd compression and row groups for optimized performance.\n\nKeywords: data preparation, dataset shuffling, Parquet files, Zstd compression, streaming, caching, FinewebEdu-100B"
+    },
+    "/Users/ananth/research/packages/nanochat/dev/gen_synthetic_data.py": {
+        "summary": "This file generates synthetic conversation data for fine-tuning a language model to embody a specific identity, in this case \"nanochat\" created by Andrej Karpathy. It leverages the OpenRouter API to create conversations between a user and an assistant, utilizing structured output (JSON) for easy parsing. The script focuses on diversity by manually curating a list of user-first messages and randomly sampling from them, ensuring varied conversation starters. The generated conversations are saved to a `.jsonl` file for later use in fine-tuning the language model.\n\nKeywords: synthetic data generation, LLM identity, OpenRouter API, JSON structured output, fine-tuning, conversation data"
+    },
+    "/Users/ananth/research/packages/nanochat/dev/runcpu.sh": {
+        "summary": "This script facilitates a CPU-based demonstration and limited training of NanoChat's core components, primarily for development and educational purposes. It sets up the necessary environment (virtual environment, Rust dependencies), trains a tokenizer on a large character dataset, and then performs several training runs: a base model training, a mid-training phase, and supervised fine-tuning (SFT). The script is designed to execute various code paths within NanoChat, even with limited computational resources, allowing developers to test and understand the system's functionality without relying on GPU acceleration. Finally it generates a report summarizing the process.\n\nKeywords: NanoChat, CPU training, tokenizer, language model, development demo, supervised fine-tuning, Rust, virtual environment"
+    },
+    "/Users/ananth/research/packages/nanochat/.git/config": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/objects/pack/pack-2be5579fd215b8db9cd3712ef89aca46bd55a0d9.pack": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/objects/pack/pack-2be5579fd215b8db9cd3712ef89aca46bd55a0d9.idx": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/HEAD": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/info/exclude": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/logs/HEAD": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/logs/refs/heads/master": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/logs/refs/remotes/origin/HEAD": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/description": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/commit-msg.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/pre-rebase.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/pre-commit.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/applypatch-msg.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/fsmonitor-watchman.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/pre-receive.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/prepare-commit-msg.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/post-update.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/pre-merge-commit.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/pre-applypatch.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/pre-push.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/update.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/hooks/push-to-checkout.sample": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/refs/heads/master": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/refs/remotes/origin/HEAD": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/index": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/.git/packed-refs": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/rustbpe/Cargo.toml": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/rustbpe/.DS_Store": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/rustbpe/Cargo.lock": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/rustbpe/README.md": {
+        "summary": null
+    },
+    "/Users/ananth/research/packages/nanochat/rustbpe/src/lib.rs": {
+        "summary": "This file implements a Byte Pair Encoding (BPE) tokenizer, designed to mimic the GPT-4 style implementation. It trains on streaming text data from a Python iterator, identifying and merging frequent token pairs to create a vocabulary. The tokenizer then encodes new text by iteratively applying these learned merges, converting the input into sequences of token IDs. It introduces `Word` and `MergeJob` structs to manage the merging process, and utilizes a parallel heap for efficient merge selection.\n\nKeywords: BPE, tokenizer, GPT-4, text encoding, parallel processing, Rust, Python integration, compact string, regex"
+    }
+}

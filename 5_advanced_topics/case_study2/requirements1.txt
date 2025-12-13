@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pytest
+pydantic
+langchain_openai
+langchain_chroma
+langchain_community
+langchain_text_splitters
+langgraph-checkpoint-sqlite
+multilspy
+jedi-language-server

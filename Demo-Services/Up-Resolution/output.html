@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Table with Thumbnails and Inline Players</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    img {
+      width: 120px;
+      height: auto;
+      display: block;
+      margin: 0 auto 8px;
+      border-radius: 5px;
+    }
+    video {
+      width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Video Output Table with Thumbnails and Inline Players</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Video</th>
+      <th>2x Output</th>
+      <th>3x Output</th>
+      <th>4x Output</th>
+      <th>Remark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="thumbnails/input1.jpg" alt="">
+        <video controls>
+          <source src="videos/input1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </td>
+      <td>
+        <img src="thumbnails/2x_output1.jpg" alt="">
+        <video controls>
+          <source src="videos/2x_output1.mp4" type="video/mp4">
+        </video>
+      </td>
+      <td>
+        <img src="thumbnails/3x_output1.jpg" alt="">
+        <video controls>
+          <source src="videos/3x_output1.mp4" type="video/mp4">
+        </video>
+      </td>
+      <td>
+        <img src="thumbnails/4x_output1.jpg" alt="">
+        <video controls>
+          <source src="videos/4x_output1.mp4" type="video/mp4">
+        </video>
+      </td>
+      <td>All outputs verified</td>
+    </tr>
+    <!-- Add more rows as needed -->
+  </tbody>
+</table>
+
+</body>
+</html>
